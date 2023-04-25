@@ -3,9 +3,12 @@ import { useParams } from "react-router-dom";
 import Loading from "../Loader/Loader";
 import coverImg from "../../images/cover_not_found.jpg";
 import "./BookDetails.css";
-//import { FaArrowLeft } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
+// https://openlibrary.org/works/OL15626917W.json
+//https://covers.openlibrary.org/b/id/12547191-L.jpg
+
+// Fetch book covers by ISBN or Open Library identifier
 const URL = "https://openlibrary.org/works/";
 
 const BookDetails = () => {
@@ -61,7 +64,6 @@ const BookDetails = () => {
   }, [id]);
 
   if (loading) return <Loading />;
-
   return (
     <section className="book-details">
       <div className="container">
@@ -70,7 +72,6 @@ const BookDetails = () => {
           className="flex flex-c back-btn"
           onClick={() => navigate("/book")}
         >
-          {/*<FaArrowLeft size={22} />*/}
           <span className="fs-18 fw-6">Go Back</span>
         </button>
 

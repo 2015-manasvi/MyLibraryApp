@@ -1,10 +1,11 @@
 import React, { useState, useContext, useEffect } from "react";
 import { useCallback } from "react";
+
 const URL = "http://openlibrary.org/search.json?title=";
 const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
-  const [searchTerm, setSearchTerm] = useState("the lost world");
+  const [searchTerm, setSearchTerm] = useState("React");
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(true);
   const [resultTitle, setResultTitle] = useState("");
@@ -42,11 +43,11 @@ const AppProvider = ({ children }) => {
         if (newBooks.length > 1) {
           setResultTitle("Your Search Result");
         } else {
-          setResultTitle("No Search Result Found!");
+          setResultTitle("No Search Result Found");
         }
       } else {
         setBooks([]);
-        setResultTitle("No Search Result Found!");
+        setResultTitle("No Search Result Found");
       }
       setLoading(false);
     } catch (error) {
