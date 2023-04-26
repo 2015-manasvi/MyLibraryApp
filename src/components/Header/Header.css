@@ -5,7 +5,8 @@
   flex-direction: column;
 }
 .header-title {
-  font-size: 4.2rem;
+  font-size: 3.8rem;
+  color: white;
 }
 .header-text {
   margin-top: -1.8rem;
