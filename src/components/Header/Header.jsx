@@ -13,7 +13,7 @@ const Header = () => {
             find your favourite books.....
           </h2>
           <br />
-          <p className="header-text fs-18 fw-3"></p>
+
           <SearchForm />
         </div>
       </header>

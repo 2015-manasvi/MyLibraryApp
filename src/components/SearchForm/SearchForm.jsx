@@ -12,7 +12,7 @@ const SearchForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     let tempSearchTerm = searchText.current.value.trim();
-    if (tempSearchTerm.replace(/[^\w\s]/gi, "").length === 0) {
+    if (tempSearchTerm.length === 0) {
       setSearchTerm("Start your search here...");
       setResultTitle("Please Enter Something ...");
     } else {
@@ -24,26 +24,17 @@ const SearchForm = () => {
 
   return (
     <div className="search-form">
-      <div className="container">
-        <div className="search-form-content">
-          <form className="search-form" onSubmit={handleSubmit}>
-            <div className="search-form-elem flex flex-sb bg-white">
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Start your search here ..."
-                ref={searchText}
-              />
-              <button
-                type="submit"
-                className="flex flex-c"
-                onClick={handleSubmit}
-              >
-                Search
-              </button>
-            </div>
-          </form>
-        </div>
+      <div className="search-form-content">
+        <form className="search-form" onSubmit={handleSubmit}>
+          <div className="search-form-elem">
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Start your search here ..."
+              ref={searchText}
+            />
+          </div>
+        </form>
       </div>
     </div>
   );
