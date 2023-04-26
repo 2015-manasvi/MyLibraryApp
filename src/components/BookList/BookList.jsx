@@ -19,8 +19,6 @@ const BookList = () => {
     };
   });
 
-  if (loading) return <Loading />;
-
   return (
     <section className="booklist">
       <div className="container">
