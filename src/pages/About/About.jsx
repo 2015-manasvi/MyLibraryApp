@@ -16,7 +16,11 @@ const About = () => {
           </div>
           <div className="about-text">
             <h2 className="about-title fs-26 ls-1">About SeacrchBook</h2>
-            <p className="fs-17"></p>
+            <p className="fs-17">
+              {" "}
+              A simple app for quickly searching the books.It is great Source
+              for finding and viewing books for free.
+            </p>
             <p className="fs-17"></p>
           </div>
         </div>

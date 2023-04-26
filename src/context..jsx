@@ -10,6 +10,21 @@ const AppProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [resultTitle, setResultTitle] = useState("");
 
+  //   import { useCallback } from 'react';
+
+  // export function MyParent({ term }) {
+  //   const onItemClick = useCallback(event => {
+  //     console.log('You clicked ', event.currentTarget);
+  //   }, [term]);
+
+  //   return (
+  //     <MyBigList
+  //       term={term}
+  //       onItemClick={onItemClick}
+  //     />
+  //   );
+  // }
+
   const fetchBooks = useCallback(async () => {
     setLoading(true);
     try {
@@ -80,3 +95,41 @@ export const useGlobalContext = () => {
 };
 
 export { AppContext, AppProvider };
+
+// import React, { useState, useEffect } from "react";
+
+// const Display =
+//     const res = await fetch(
+//       "https://openlibrary.org/search.json?title=tolkien&sort=new"
+//     );
+
+//     if (res.status === 200) {
+//       const data = await res.json();
+//       setTitle(data);
+//     } else {
+//       alert("Error has Occured");
+//     }
+//   };
+//   useEffect(() => {
+//     getData();
+//   }, []);
+
+//   return (
+//     <div className="container">
+//       <h1>Library App</h1>
+//       <div className="row"></div>
+
+//       <div className="row">
+//         <div className="col-md-4">
+//           <h3>Books Title</h3>
+//         </div>
+//       </div>
+
+//       {title.docs.map((item, id) => {
+//         return <li key={id}>{item.title}</li>;
+//       })}
+//     </div>
+//   );
+// };
+
+// export default Display;

@@ -38,7 +38,9 @@ const SearchForm = () => {
                 type="submit"
                 className="flex flex-c"
                 onClick={handleSubmit}
-              ></button>
+              >
+                Search
+              </button>
             </div>
           </form>
         </div>
