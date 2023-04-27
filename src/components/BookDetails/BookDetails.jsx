@@ -33,6 +33,7 @@ const BookDetails = () => {
             subject_times,
             subjects,
           } = getData;
+
           const newBook = {
             description: description
               ? description.value
@@ -70,7 +71,7 @@ const BookDetails = () => {
           className="flex flex-c back-btn"
           onClick={() => navigate("/book")}
         >
-          <span className="fs-18 fw-6">Go Back</span>
+          <span className="fs-18 fw-6 ">Go Back</span>
         </button>
 
         <div className="book-details-content grid">
