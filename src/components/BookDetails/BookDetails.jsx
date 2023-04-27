@@ -16,50 +16,48 @@ const BookDetails = () => {
   const [book, setBook] = useState(null);
   const navigate = useNavigate();
 
+  const getBookDetails = async () => {
+    try {
+      const res = await fetch(`${URL}${id}.json`);
+      const getData = await res.json();
+      console.log(getData);
+
+      if (getData) {
+        const {
+          description,
+          title,
+          covers,
+          subject_places,
+          subject_times,
+          subjects,
+        } = getData;
+
+        const newBook = {
+          description: description ? description.value : "No description found",
+          title: title,
+          cover_img: covers
+            ? `https://covers.openlibrary.org/b/id/${covers[0]}-L.jpg`
+            : coverImg,
+          subject_places: subject_places
+            ? subject_places.join(", ")
+            : "No subject places found",
+          subject_times: subject_times
+            ? subject_times.join(", ")
+            : "No subject times found",
+          subjects: subjects ? subjects.join(", ") : "No subjects found",
+        };
+        setBook(newBook);
+      } else {
+        setBook(null);
+      }
+      setLoading(false);
+    } catch (error) {
+      console.log(error);
+      setLoading(false);
+    }
+  };
   useEffect(() => {
     setLoading(true);
-    async function getBookDetails() {
-      try {
-        const res = await fetch(`${URL}${id}.json`);
-        const getData = await res.json();
-        console.log(getData);
-
-        if (getData) {
-          const {
-            description,
-            title,
-            covers,
-            subject_places,
-            subject_times,
-            subjects,
-          } = getData;
-
-          const newBook = {
-            description: description
-              ? description.value
-              : "No description found",
-            title: title,
-            cover_img: covers
-              ? `https://covers.openlibrary.org/b/id/${covers[0]}-L.jpg`
-              : coverImg,
-            subject_places: subject_places
-              ? subject_places.join(", ")
-              : "No subject places found",
-            subject_times: subject_times
-              ? subject_times.join(", ")
-              : "No subject times found",
-            subjects: subjects ? subjects.join(", ") : "No subjects found",
-          };
-          setBook(newBook);
-        } else {
-          setBook(null);
-        }
-        setLoading(false);
-      } catch (error) {
-        console.log(error);
-        setLoading(false);
-      }
-    }
     getBookDetails();
   }, [id]);
 
