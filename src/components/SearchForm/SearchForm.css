@@ -14,3 +14,14 @@
 .search-form-elem .form-control::placeholder {
   opacity: 0.9;
 }
+.reset-btn {
+  border-radius: 20px;
+  color: black;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}

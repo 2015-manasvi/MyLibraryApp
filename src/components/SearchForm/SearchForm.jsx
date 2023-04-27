@@ -22,6 +22,12 @@ const SearchForm = () => {
   };
   useEffect(() => searchText.current.focus(), []);
 
+  const handleReset = () => {
+    setSearchTerm("React");
+    setResultTitle([]);
+    searchText.current.value = "";
+  };
+
   return (
     <div className="search-form">
       <div className="search-form-content">
@@ -35,6 +41,12 @@ const SearchForm = () => {
             />
           </div>
         </form>
+        <br />
+        <div>
+          <button className="reset-btn" onClick={handleReset}>
+            <span>Reset</span>
+          </button>
+        </div>
       </div>
     </div>
   );
