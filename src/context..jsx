@@ -13,9 +13,9 @@ const AppProvider = ({ children }) => {
   const fetchBooks = useCallback(async () => {
     setLoading(true);
     try {
-      const response = await fetch(`${URL}${searchTerm}`);
-      const data = await response.json();
-      const { docs } = data;
+      const res = await fetch(`${URL}${searchTerm}`);
+      const getData = await res.json();
+      const { docs } = getData;
 
       if (docs) {
         const newBooks = docs.slice(0, 15).map((bookSingle) => {
